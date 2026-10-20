@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         loader.style.display = "block";
         result.innerHTML = "";
 
-        fetch("https://flask-render-s822.onrender.com/api/data", {
+        fetch("https://bolid-backend.onrender.com/api/data", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
