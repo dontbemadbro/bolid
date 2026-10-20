@@ -3,35 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BOLID — scanner de plaque d'immatriculation : affichez les caractéristiques d'un véhicule français.">
+    <title>BOLID — Scanner de plaque</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.js"></script>
-    <title>Document</title>
 </head>
-<body style="background-color: black;">
-    <center><h1 class="freebolid">FREE BOLID</h1></center>
-    <div>
-        <center>
-            <label for="plaque"></label>
-            <input
-            class="input1"
-            type="text"
-            id="plaqueInput"
-            placeholder="Met ta plaque...">
-        </center> 
-    </div>
+<body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="glow glow-1" aria-hidden="true"></div>
+    <div class="glow glow-2" aria-hidden="true"></div>
 
-    
-    <div>
-        <center>
-            <button id="button1" class="button1">Scan</button>
-            <div id="loader" style="display: none; text-align: center; margin-top: 10px;">
-                <img src="https://i.gifer.com/ZZ5H.gif" alt="Chargement..." width="50">
+    <main class="app">
+        <header class="brand">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 13l2-5a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 8l2 5"></path>
+                    <path d="M5 17h14a2 2 0 0 0 2-2v-2H3v2a2 2 0 0 0 2 2z"></path>
+                    <circle cx="7.5" cy="17" r="1.6"></circle>
+                    <circle cx="16.5" cy="17" r="1.6"></circle>
+                </svg>
+            </span>
+            <span class="brand-name">BOLID</span>
+        </header>
+
+        <section class="hero">
+            <h1 class="hero-title">Scanner de plaque</h1>
+            <p class="hero-sub">Entrez une plaque d'immatriculation française pour révéler les caractéristiques du véhicule.</p>
+        </section>
+
+        <section class="scan">
+            <div class="plate">
+                <div class="plate-band plate-band--left" aria-hidden="true">
+                    <span class="plate-stars">∗ ∗ ∗</span>
+                    <span class="plate-country">F</span>
+                </div>
+                <input
+                    id="plaqueInput"
+                    class="plate-input"
+                    type="text"
+                    inputmode="text"
+                    autocomplete="off"
+                    autocapitalize="characters"
+                    spellcheck="false"
+                    maxlength="12"
+                    placeholder="AA-123-AA"
+                    aria-label="Plaque d'immatriculation">
+                <div class="plate-band plate-band--right" aria-hidden="true"></div>
             </div>
-            <div id="result" class="scantext"></div>
-        </center>
-    </div>
 
-    <div>
-    </div>
+            <button id="button1" class="scan-btn" type="button">
+                <span class="scan-btn-spinner" aria-hidden="true"></span>
+                <span class="scan-btn-label">Scanner</span>
+                <svg class="scan-btn-ico" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
+                    <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
+                    <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
+                    <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
+                    <path d="M7 12h10"></path>
+                </svg>
+            </button>
+        </section>
+
+        <div id="loader" class="loader" hidden>
+            <span class="spinner" aria-hidden="true"></span>
+            <p class="loader-text">Analyse de la plaque…</p>
+        </div>
+
+        <section id="result" class="result" aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">
+        <span>BOLID · données à titre indicatif</span>
+    </footer>
 </body>
 </html>
