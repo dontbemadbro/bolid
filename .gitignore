@@ -1,0 +1,8 @@
+# Ne jamais publier le backend ni les venv
+app.py
+requirements*.txt
+pyvenv.cfg
+bin/
+lib/
+venv/
+__pycache__/

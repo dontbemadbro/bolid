@@ -1,0 +1,35 @@
+.input1{
+    margin-top: 25px;
+    height: 30px;
+    text-align: center;
+    background-color: gray;
+}
+
+.input1::placeholder{
+    text-align: center;
+    color: rgb(58, 57, 57);
+}
+
+
+.button1{
+    height: 40px;
+    width: 120px;
+    margin-top: 10px;
+    background-color: cyan;
+}
+
+.freebolid{
+    color: white;
+}
+
+.scantext{
+    color: red;
+    margin-top: -170px;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.kheder{
+    color: red;
+    font-size: 50px;
+}
